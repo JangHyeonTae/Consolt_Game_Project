@@ -8,11 +8,7 @@ namespace Console_Game_Project
 {
     public abstract class QuizClass
     {
-        MainQuiz mainQuiz;
-
         public string name;
-        public string answer;
-        public string question; 
 
         public QuizClass(string _name)
         {
@@ -28,23 +24,10 @@ namespace Console_Game_Project
             Console.WriteLine("문제!!");
         }
         public abstract void Render();
-        
+
+        public abstract void Input();
         public abstract void Update();
-        public void Main()
-        {
-            Render();
-            while (answer != question)
-            {
-                Update();
-            }
-            Exit();
-        }
-        public void Exit()
-        {
-            if (answer == question)
-            {
-                mainQuiz.Finish();
-            }
-        }
+        
+        public abstract void Exit();
     }
 }

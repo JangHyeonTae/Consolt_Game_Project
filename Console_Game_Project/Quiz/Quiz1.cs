@@ -8,6 +8,7 @@ namespace Console_Game_Project.Quiz
 {
     public class Quiz1 : QuizClass
     {
+        MainQuiz mainQuiz;
         private string answer = Console.ReadLine();
         private string question;
         public Quiz1() : base("문제1")
@@ -20,19 +21,29 @@ namespace Console_Game_Project.Quiz
             Console.WriteLine();
             Console.Write("답 : ");
         }
-        
+
+        public override void Input()
+        {
+            answer = Console.ReadLine();
+        }
 
         public override void Update()
         {
-            answer = Console.ReadLine();
-            Game.Player.TakeDamage(10);
-        }
-        public void Main()
-        {
             Render();
-            while (answer == question)
+            while (answer != question)
             {
-                Update();
+                Input();
+
+                Game.Player.TakeDamage(10);
+            }
+            Exit();
+            
+        }
+        public override void Exit()
+        {
+            if (answer == question)
+            {
+                mainQuiz.Finish();
             }
         }
     }

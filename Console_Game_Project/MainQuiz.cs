@@ -12,13 +12,14 @@ namespace Console_Game_Project
     public class MainQuiz
     {
         private int selectIndex;
-        public List<QuizClass> list = new List<QuizClass>();
+        public List<QuizClass> list;
         private Stack<string> stack;
         public MainQuiz()
         {
             list.Add(new Quiz1());
             list.Add(new Quiz2());
 
+            list = new List<QuizClass>();
             stack = new Stack<string>();
         }
 
@@ -69,7 +70,7 @@ namespace Console_Game_Project
             switch (input)
             {
                 case ConsoleKey.Y:
-                    list[selectIndex].Main();
+                    list[selectIndex].Update();
                     break;
                 case ConsoleKey.N:
                     stack.Pop();

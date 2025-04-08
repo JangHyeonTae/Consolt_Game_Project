@@ -8,6 +8,8 @@ namespace Console_Game_Project.Quiz
 {
     internal class Quiz2 : QuizClass
     {
+        MainQuiz mainQuiz;
+
         private int answer;
         private int question;
         public Quiz2() : base("문제2")
@@ -15,20 +17,31 @@ namespace Console_Game_Project.Quiz
         }
         public override void Render()
         {
-            
+           
         }
-        public override void Update()
+
+        public override void Input()
         {
             string a = Console.ReadLine();
             int.TryParse(a, out answer);
+        }
+        public override void Update()
+        {
+            Render();
+            while (answer != question)
+            {
+                Input();
+
+                Game.Player.TakeDamage(10);
+            }
+            Exit();
+        }
+
+        public override void Exit()
+        {
             if (answer == question)
             {
-                Game.ChangeScene("Home");
-                Console.CursorVisible = false;
-            }
-            else
-            {
-                Game.Player.TakeDamage(10);
+                mainQuiz.Finish();
             }
         }
     }
