@@ -16,9 +16,6 @@ namespace Console_Game_Project
         private Stack<string> stack;
         public MainQuiz()
         {
-            list.Add(new Quiz1());
-            list.Add(new Quiz2());
-
             list = new List<QuizClass>();
             stack = new Stack<string>();
         }

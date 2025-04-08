@@ -9,7 +9,6 @@ namespace Console_Game_Project
     public abstract class EnemyClass : GameManager
     {
         private MainQuiz mainQuiz;
-        public MainQuiz MainQuiz { get { return mainQuiz; } }
 
         protected EnemyClass(char express, Vector2 position) :
             base(ConsoleColor.Red, express, position, true)
@@ -19,7 +18,7 @@ namespace Console_Game_Project
 
         public override void Interact(Player player)
         {
-            MainQuiz.Catch();
+            mainQuiz.Catch();
         }
     }
 }

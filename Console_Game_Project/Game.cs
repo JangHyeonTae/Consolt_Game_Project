@@ -13,7 +13,8 @@ namespace Console_Game_Project
         private static Dictionary<string,SceneManager> sceneDic;
         private static SceneManager curScene;
         public static string prevSceneName;
-
+        public static MainQuiz mainQuiz;
+        
         private static Player player;
         public static Player Player { get { return player; } }
 
@@ -54,6 +55,7 @@ namespace Console_Game_Project
             player = new Player();
 
             sceneDic = new Dictionary<string, SceneManager>();
+            mainQuiz = new MainQuiz();
 
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("HomeTown", new HomeTown());
@@ -62,6 +64,8 @@ namespace Console_Game_Project
             sceneDic.Add("Level2", new Level2Scene());
             sceneDic.Add("Level3", new Level3Scene());
 
+            mainQuiz.list.Add(new Quiz1());
+            mainQuiz.list.Add(new Quiz2());
 
             curScene = sceneDic["Title"];
         }
