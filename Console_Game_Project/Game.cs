@@ -1,4 +1,5 @@
-﻿using Console_Game_Project.Scene;
+﻿using Console_Game_Project.Quiz;
+using Console_Game_Project.Scene;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,6 +61,7 @@ namespace Console_Game_Project
             sceneDic.Add("Level1", new Level1Scene());
             sceneDic.Add("Level2", new Level2Scene());
             sceneDic.Add("Level3", new Level3Scene());
+
 
             curScene = sceneDic["Title"];
         }
