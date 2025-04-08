@@ -13,8 +13,9 @@ namespace Console_Game_Project
         private static Dictionary<string,SceneManager> sceneDic;
         private static SceneManager curScene;
         public static string prevSceneName;
+
         private static MainQuiz mainQuiz;
-        public static MainQuiz MainQuiz { get { return mainQuiz; } }
+        public static MainQuiz MainQuiz {  get { return mainQuiz; } }
         
         private static Player player;
         public static Player Player { get { return player; } }
@@ -54,9 +55,9 @@ namespace Console_Game_Project
             gameOver = false;
 
             player = new Player();
-            
-
+            player.CurHP = 100;
             sceneDic = new Dictionary<string, SceneManager>();
+            mainQuiz = new MainQuiz();
 
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("HomeTown", new HomeTown());
@@ -86,9 +87,9 @@ namespace Console_Game_Project
 
         public static void PrintPlayerHP()
         {
-            Console.WriteLine("\t\t\t\t\t****************************");
-            Console.WriteLine($"\t\t\t\t\t*     {player.CurHP}   *");
-            Console.WriteLine("\t\t\t\t\t****************************");
+            Console.WriteLine("\t\t\t\t\t\t****************************");
+            Console.WriteLine($"\t\t\t\t\t\t* 체력:  {player.CurHP}   *");
+            Console.WriteLine("\t\t\t\t\t\t****************************");
         }
     }
 }

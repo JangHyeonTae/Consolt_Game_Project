@@ -16,17 +16,12 @@ namespace Console_Game_Project
         private Inventory inventory;
         public Inventory Inventory { get { return inventory; } }
 
-        private int maxHP;
-        public int MaxHP {  get { return maxHP; } }
-
-        private int curHP;
+        private int curHP = 100;
         public int CurHP { get { return curHP; } set { curHP = value; } }
 
         public Player()
         {
             inventory = new Inventory();
-            maxHP = 100;
-            curHP = maxHP;
         }
 
         public void PrintPlayer()
@@ -35,19 +30,6 @@ namespace Console_Game_Project
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write('M');
             Console.ResetColor();
-        }
-        public void Action(ConsoleKey input)
-        {
-            switch (input)
-            {
-                case ConsoleKey.W:
-                case ConsoleKey.S:
-                case ConsoleKey.A:
-                case ConsoleKey.D:
-                    Move(input);
-                    break;
-                
-            }
         }
         public void Move(ConsoleKey input)
         {
@@ -84,7 +66,6 @@ namespace Console_Game_Project
             {
                 Game.GameOver("사망...역시 조사병단은 쉽지가 않죠!");
             }
-
         }
     }
 }

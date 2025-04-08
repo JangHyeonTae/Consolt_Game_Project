@@ -8,7 +8,6 @@ namespace Console_Game_Project.Quiz
 {
     public class Quiz1 : QuizClass
     {
-        MainQuiz mainQuiz;
         private string answer;
         private string question = "오페라하우스";
 
@@ -18,7 +17,7 @@ namespace Console_Game_Project.Quiz
         }
         public override void Render()
         {
-            Game.PrintPlayerHP();
+            
             Console.WriteLine("잡혔네요!ㅎㅎ 퀴즈를 풀어야 놔줄겁니다!");
             Console.WriteLine("규칙은 당신의 체력이 끝나기전에 문제를 맞춰야합니다");
             Console.WriteLine("단, 띄어쓰기는 하지마세요!");
@@ -38,24 +37,28 @@ namespace Console_Game_Project.Quiz
 
         public override void Update()
         {
+            Console.Clear();
             Render();
             while (answer != question)
             {
+                Game.PrintPlayerHP();
                 Input();
-                
-                Game.Player.TakeDamage(10);
-                
-                
+                if (answer != question)
+                {
+                    Game.Player.TakeDamage(10);
+                }
+                else
+                {
+                    Exit();
+                    break;
+                }
             }
-            Exit();
+            
             
         }
         public override void Exit()
         {
-            if (answer == question)
-            {
-                mainQuiz.Finish();
-            }
+             Game.MainQuiz.Finish();
         }
     }
 }

@@ -13,7 +13,8 @@ namespace Console_Game_Project
     {
         private int selectIndex;
         public List<QuizClass> list;
-        private Stack<string> stack;
+        public Stack<string> stack;
+
         public MainQuiz()
         {
             list = new List<QuizClass>();
@@ -50,10 +51,12 @@ namespace Console_Game_Project
             
             
             int select = (int)input - (int)ConsoleKey.D1;
+            
             if (select < 0 || list.Count <= select)
             {
                 Util.PressAnyKey("범위 내의 퀴즈를 선택하세요.");
             }
+            
             else
             {
                 selectIndex = select;
@@ -72,6 +75,8 @@ namespace Console_Game_Project
             {
                 case ConsoleKey.Y:
                     list[selectIndex].Update();
+                    stack.Pop();
+                    stack.Pop();
                     break;
                 case ConsoleKey.N:
                     stack.Pop();
@@ -95,9 +100,7 @@ namespace Console_Game_Project
 
         public void Finish()
         {
-            list.Remove(new Quiz2());
-            stack.Pop();
-            stack.Pop();
+            list.Remove(list[selectIndex]);
         }
     }
 }
