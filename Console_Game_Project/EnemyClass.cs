@@ -19,7 +19,7 @@ namespace Console_Game_Project
 
         public override void Interact(Player player)
         {
-            //MainQuiz.Catch();
+            MainQuiz.Catch();
         }
     }
 }
