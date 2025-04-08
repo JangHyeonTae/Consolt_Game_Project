@@ -80,7 +80,7 @@ namespace Console_Game_Project
         public void TakeDamage(int damage)
         {
             CurHP -= damage;
-            if (CurHP >= 0)
+            if (CurHP <= 0)
             {
                 Game.GameOver("사망...역시 조사병단은 쉽지가 않죠!");
             }

@@ -18,6 +18,9 @@ namespace Console_Game_Project
         {
             list = new List<QuizClass>();
             stack = new Stack<string>();
+
+            list.Add(new Quiz1());
+            list.Add(new Quiz2());
         }
 
         public void Catch()
@@ -26,6 +29,7 @@ namespace Console_Game_Project
 
             while (stack.Count > 0)
             {
+                Console.Clear();
                 switch (stack.Peek())
                 {
                     case "QuizList": QuizList();
@@ -91,6 +95,7 @@ namespace Console_Game_Project
 
         public void Finish()
         {
+            list.Remove(new Quiz2());
             stack.Pop();
             stack.Pop();
         }
