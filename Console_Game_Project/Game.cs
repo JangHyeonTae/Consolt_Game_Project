@@ -13,7 +13,8 @@ namespace Console_Game_Project
         private static Dictionary<string,SceneManager> sceneDic;
         private static SceneManager curScene;
         public static string prevSceneName;
-        public static MainQuiz mainQuiz;
+        private static MainQuiz mainQuiz;
+        public static MainQuiz MainQuiz { get { return mainQuiz; } }
         
         private static Player player;
         public static Player Player { get { return player; } }
@@ -53,6 +54,7 @@ namespace Console_Game_Project
             gameOver = false;
 
             player = new Player();
+            
 
             sceneDic = new Dictionary<string, SceneManager>();
 
@@ -80,6 +82,13 @@ namespace Console_Game_Project
         public static void End()
         {
 
+        }
+
+        public static void PrintPlayerHP()
+        {
+            Console.WriteLine("\t\t\t\t\t****************************");
+            Console.WriteLine($"\t\t\t\t\t*     {player.CurHP}   *");
+            Console.WriteLine("\t\t\t\t\t****************************");
         }
     }
 }

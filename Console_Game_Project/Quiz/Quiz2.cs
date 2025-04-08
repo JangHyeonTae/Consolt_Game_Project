@@ -17,6 +17,7 @@ namespace Console_Game_Project.Quiz
         }
         public override void Render()
         {
+            Game.PrintPlayerHP();
             Console.WriteLine("*****************************************");
             Console.WriteLine("******** 숫자야구 ************************");
             Console.WriteLine("*****************************************");

@@ -16,7 +16,7 @@ namespace Console_Game_Project.Scene
         protected List<GameManager> gameObjects;
         public override void Render()
         {
-            Console.WriteLine($"\t\t\t\t\t지금 위치는 : {name}");
+            //Console.WriteLine($"\t\t\t\t\t지금 위치는 : {name}");
             PrintMap();
             foreach (GameManager a in gameObjects)
             {
@@ -25,6 +25,7 @@ namespace Console_Game_Project.Scene
             Game.Player.PrintPlayer();
 
             Console.SetCursorPosition(0, map.GetLength(0) + 2);
+            Game.PrintPlayerHP();
         }
 
         public override void Input()
@@ -51,6 +52,7 @@ namespace Console_Game_Project.Scene
                 }
             }
         }
+        
 
         public void PrintMap()
         {
