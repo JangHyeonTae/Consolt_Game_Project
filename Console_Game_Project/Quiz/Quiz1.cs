@@ -10,7 +10,8 @@ namespace Console_Game_Project.Quiz
     {
         private string answer;
         private string question = "190000";
-        public Quiz1() : base("문제1")
+
+        public Quiz1() : base("문제1",false,false)
         {
         }
         public override void Render()
@@ -23,6 +24,8 @@ namespace Console_Game_Project.Quiz
             Console.WriteLine("문제!!");
             Console.WriteLine("세상에서 가장 쉬운 숫자는?");
             Console.WriteLine();
+            
+            
         }
 
         public override void Input()
@@ -35,30 +38,36 @@ namespace Console_Game_Project.Quiz
         {
             Console.Clear();
             Render();
-            while (answer != question)
+            
+            while (answer != question && isGoal == false)
             {
-                Game.PrintPlayerHP();
+                Game.PrintPlayerHP(); 
+                if (hint == true)
+                {
+                    Console.WriteLine("힌트 : 십구십구십구십구십죠?");
+                }
                 Input();
                 if (answer == "Item")
                 {
                     Game.Player.Inventory.Open();
                 }
-                if (answer != question && answer != "Item")
+                else if (answer != question && answer != "Item")
                 {
                     Game.Player.TakeDamage(10);
                 }
-                else
+                if (answer == question)
                 {
+                    Util.PressAnyKey("정답입니다!");
                     Exit();
                 }
             }
-            
-              
-            
         }
+
         public override void Exit()
         {
-             Game.MainQuiz.Finish();
+            isGoal = true;
+            hint = false;
+            Game.MainQuiz.Finish();
         }
     }
 }

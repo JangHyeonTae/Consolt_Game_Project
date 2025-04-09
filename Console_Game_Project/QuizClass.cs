@@ -9,18 +9,19 @@ namespace Console_Game_Project
     public abstract class QuizClass
     {
         public string name;
-
-        public QuizClass(string _name)
+        public bool isGoal;
+        public bool hint;
+        public QuizClass(string _name, bool isGoal, bool hint)
         {
             name = _name;
-
+            this.isGoal = isGoal;
+            this.hint = hint;
         }
         public abstract void Render();
 
-        public virtual void Input()
-        {
-            
-        }
+        public virtual void Input(){}
+
+        //public abstract void Hint();
         public abstract void Update();
         
         public abstract void Exit();

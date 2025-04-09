@@ -42,6 +42,7 @@ namespace Console_Game_Project.Scene
             gameObjects.Add(new Pass(new Vector2(10, 4)));
             gameObjects.Add(new Level1Enemy( 'E', new Vector2(9, 2)));
             gameObjects.Add(new Level2Enemy('E', new Vector2(8, 4)));
+            gameObjects.Add(new Hint(new Vector2(8, 2)));
         }
         
 

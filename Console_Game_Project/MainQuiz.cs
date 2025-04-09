@@ -12,6 +12,7 @@ namespace Console_Game_Project
     public class MainQuiz
     {
         private int selectIndex;
+        public int SelectIndex { get { return selectIndex; } }
 
         public void Catch()
         {

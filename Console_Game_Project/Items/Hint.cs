@@ -18,6 +18,8 @@ namespace Console_Game_Project.Items
         public override void Use()
         {
             
+            Game.list[Game.MainQuiz.SelectIndex].hint = true;
+            
         }
     }
 }

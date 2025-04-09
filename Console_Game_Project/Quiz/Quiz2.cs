@@ -8,12 +8,14 @@ namespace Console_Game_Project.Quiz
 {
     internal class Quiz2 : QuizClass
     {
-        public Quiz2() : base("문제2")
+        public Quiz2() : base("문제2",false,false)
         {
             
         }
         public override void Render()
         {
+
+
             Console.WriteLine("*****************************************");
             Console.WriteLine("******** 숫자야구 ************************");
             Console.WriteLine("*****************************************");
@@ -27,6 +29,7 @@ namespace Console_Game_Project.Quiz
             Console.WriteLine("**Item을 입력하시면 인벤토리창에 들어갑니다**");
             Console.WriteLine();
             Console.WriteLine();
+            
 
 
             int[] questionArr = new int[4];                           
@@ -55,16 +58,23 @@ namespace Console_Game_Project.Quiz
                     }
                 }
             }
-
-            while (Game.Player.CurHP > 0)                                          
+            
+            while (Game.Player.CurHP > 0 && isGoal == false)                                          
             {
-                
+                Console.Clear();
                 Game.PrintPlayerHP();
                 foreach (int num in questionArr)
                 {
                     Console.Write(num + " ");
                 }
-
+                Console.WriteLine();
+                if (hint == true)
+                {
+                    for (int i = 0; i < questionArr.Count() - 2; i++)
+                    {
+                        Console.WriteLine($"힌트{i + 1} : {questionArr[i]}");
+                    }
+                }
                 cnt++;
 
                 Console.WriteLine("========={0} 번째 기회 ============", cnt);
@@ -79,7 +89,8 @@ namespace Console_Game_Project.Quiz
                 if (a == "Item")
                 {
                     Game.Player.InventoryOpen();
-                    break;
+                    cnt--;
+                    Game.PrintPlayerHP();
                 }
 
                 if (isTrue)                                                    
@@ -118,34 +129,32 @@ namespace Console_Game_Project.Quiz
                 Console.WriteLine();
                 Console.WriteLine();
                 
-                if (strike == 4)
+                if (strike == 4 || isGoal == true)
                 {
-                    Console.WriteLine("홈럽~~~~");
-                    Exit();
+                    Util.PressAnyKey("홈럽~~~~");
                     break;
                 }
-                else if (cnt > 10)
-                {
-                    Console.WriteLine("땡! ");
-                    Exit();
-                    break;
-                }
-                Game.Player.TakeDamage(5);
+                
                 strike -= strike;                                              
                 ball -= ball;                                                  
-                
+                if (strike != 4 && a != "Item")
+                {
+                    Game.Player.TakeDamage(5);
+                }
             }
         }
 
         public override void Update()
         {
-            Console.Clear();
+            
             Render();
             
         }
 
         public override void Exit()
         {
+            isGoal = true;
+            hint = false; 
             Game.MainQuiz.Finish();
         }
     }

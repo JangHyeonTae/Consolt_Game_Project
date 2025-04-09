@@ -12,6 +12,7 @@ namespace Console_Game_Project.GameObject
         private Stack<string> stack;
 
         private int selectIndex;
+        public int SelectIndex { get { return selectIndex; } }
 
         public Inventory()
         {
@@ -76,7 +77,13 @@ namespace Console_Game_Project.GameObject
         public void Confirm()
         {
             PrintMenu();
+
+            if (items.Count <= 0)
+            {
+                return;
+            }
             Item selectItem = items[selectIndex];
+            
             Console.WriteLine($"진짜 {selectItem.name}을 사용 하시겠습니까?");
             Console.WriteLine("U : 사용하기");
             Console.WriteLine("I : 뒤로가기");
@@ -86,13 +93,16 @@ namespace Console_Game_Project.GameObject
             if (input == ConsoleKey.I)
             {
                 stack.Pop();
+                Console.Clear();
             }
             else if (input == ConsoleKey.U)
             {
                 selectItem.Use();
                 Util.PressAnyKey($"{selectItem.name}을 사용했습니다.");
+                
                 Remove(selectItem);
                 stack.Pop();
+                Console.Clear();
             }
             else
             {
