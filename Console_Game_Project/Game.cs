@@ -1,4 +1,6 @@
-﻿using Console_Game_Project.Quiz;
+﻿using Console_Game_Project.GameObject;
+using Console_Game_Project.Items;
+using Console_Game_Project.Quiz;
 using Console_Game_Project.Scene;
 using System;
 using System.Collections;
@@ -16,12 +18,21 @@ namespace Console_Game_Project
         public static string prevSceneName;
 
         public static List<QuizClass> list;
-        public static Stack<string> stack;
+        public static Stack<string> stackQuiz;
 
+        public static List<Item> items;
+        public static Stack<string> stackStore;
+
+        //private static Store store;
+        //public static Store Store {  get { return store; } }
 
         private static MainQuiz mainQuiz;
-        public static MainQuiz MainQuiz {  get { return mainQuiz; } }
-        
+        public static MainQuiz MainQuiz { get { return mainQuiz; } }
+
+
+        private static Store store;
+        public static Store Store { get { return store; } }
+
         private static Player player;
         public static Player Player { get { return player; } }
 
@@ -61,8 +72,10 @@ namespace Console_Game_Project
 
             player = new Player();
             player.CurHP = 100;
+
             sceneDic = new Dictionary<string, SceneManager>();
             mainQuiz = new MainQuiz();
+            store = new Store();
 
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("HomeTown", new HomeTown());
@@ -74,12 +87,13 @@ namespace Console_Game_Project
             curScene = sceneDic["Title"];
 
             Quiz();
+            StoreItem();
         }
 
         public static void Quiz()
         {
             list = new List<QuizClass>();
-            stack = new Stack<string>();
+            stackQuiz = new Stack<string>();
 
             list.Add(new Quiz1());
             list.Add(new Quiz2());
@@ -87,6 +101,18 @@ namespace Console_Game_Project
             list.Add(new Quiz4());
             
         }
+
+        public static void StoreItem()
+        {
+            items = new List<Item>();
+            stackStore = new Stack<string>();
+
+            items.Add(new Potion());
+            items.Add(new Hint());
+            items.Add(new Pass());
+        }
+
+        
 
         public static void GameOver(string reason)
         {

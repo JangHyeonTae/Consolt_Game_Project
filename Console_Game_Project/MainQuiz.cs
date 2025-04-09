@@ -16,12 +16,12 @@ namespace Console_Game_Project
 
         public void Catch()
         {
-            Game.stack.Push("QuizList");
+            Game.stackQuiz.Push("QuizList");
 
-            while (Game.stack.Count > 0)
+            while (Game.stackQuiz.Count > 0)
             {
                 Console.Clear();
-                switch (Game.stack.Peek())
+                switch (Game.stackQuiz.Peek())
                 {
                     case "QuizList": QuizList();
                         break;
@@ -50,7 +50,7 @@ namespace Console_Game_Project
             else
             {
                 selectIndex = select;
-                Game.stack.Push("Confirm");
+                Game.stackQuiz.Push("Confirm");
             }
             
         }
@@ -68,7 +68,7 @@ namespace Console_Game_Project
                     
                     break;
                 case ConsoleKey.N:
-                    Game.stack.Pop();
+                    Game.stackQuiz.Pop();
                     break;
 
             }
@@ -79,7 +79,7 @@ namespace Console_Game_Project
             Console.WriteLine("퀴즈 수");
             if (Game.list.Count == 0)
             {
-                Game.stack.Pop();
+                Game.stackQuiz.Pop();
             }
             for (int i = 0; i < Game.list.Count; i++)
             {
@@ -93,8 +93,8 @@ namespace Console_Game_Project
             {
                 return;
             }
-            Game.stack.Pop();
-            Game.stack.Pop();
+            Game.stackQuiz.Pop();
+            Game.stackQuiz.Pop();
             Game.list.Remove(Game.list[selectIndex]);
         }
     }

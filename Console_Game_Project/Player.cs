@@ -21,6 +21,9 @@ namespace Console_Game_Project
         private int curHP = 100;
         public int CurHP { get { return curHP; } set { curHP = value; } }
 
+        private int money;
+        public int Money { get { return money; } set {  money = value; } }  
+
         public Player()
         {
             inventory = new Inventory();
@@ -60,6 +63,19 @@ namespace Console_Game_Project
                 position = pos;
             }
         }
+
+        public void Buy(int cost)
+        {
+            if (money >= cost)
+            {
+                money -= cost;
+            }
+            else
+            {
+                Console.WriteLine("돈이 부족합니다");
+            }
+        }
+
         public void InventoryOpen()
         {
             inventory.Open();

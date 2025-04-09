@@ -9,12 +9,15 @@ namespace Console_Game_Project.Items
 {
     internal class Potion : Item
     {
-        public Potion(Vector2 position) : base('P',position)
+        public Potion(Vector2 position) : base('P',position ,10)
         {
             name = "포션";
             description = "HP + 30";
         }
-        
+        public Potion() : base('P', new Vector2(0,0), 10)
+        {
+        }
+
         public override void Use()
         {
             Game.Player.Heal(30);

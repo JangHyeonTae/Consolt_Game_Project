@@ -8,16 +8,16 @@ namespace Console_Game_Project.GameObject
 {
     public class StoreObject : GameManager
     {
+        
 
-
-        public StoreObject(char express, Vector2 position) : base(ConsoleColor.Blue, express, position, false)
+        public StoreObject(char express, Vector2 position) : base(ConsoleColor.White, express, position, false)
         {
-
+           
         }
 
         public override void Interact(Player player)
         {
-            
+            Game.Store.StoreBuy();
         }
     }
 }

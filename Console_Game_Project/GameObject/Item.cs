@@ -10,10 +10,11 @@ namespace Console_Game_Project.GameObject
     {
         public string name;
         public string description;
+        public int cost;
 
-        public Item(char express, Vector2 position) : base(ConsoleColor.Green, express, position, true)
+        public Item(char express, Vector2 position, int _cost) : base(ConsoleColor.Green, express, position, true)
         {
-
+            cost = _cost;
         }
 
         public override void Interact(Player player)

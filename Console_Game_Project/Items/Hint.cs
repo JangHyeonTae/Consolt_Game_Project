@@ -9,10 +9,14 @@ namespace Console_Game_Project.Items
 {
     public class Hint : Item
     {
-        public Hint(Vector2 position) : base('H', position)
+        public Hint(Vector2 position) : base('H', position, 50)
         {
             name = "힌트권";
             description = "힌트를 받을 수 있다";
+        }
+        public Hint() : base('H', new Vector2(0,0), 50)
+        {
+
         }
 
         public override void Use()
