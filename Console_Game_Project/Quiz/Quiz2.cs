@@ -33,8 +33,8 @@ namespace Console_Game_Project.Quiz
 
 
             int[] questionArr = new int[4];                           
-            int[] answerArr = new int[4];                       
-
+            int[] answerArr = new int[4];
+            int[] hintArr = questionArr;
             Random rand = new Random();
 
             int cnt = 0;                                       
@@ -70,8 +70,11 @@ namespace Console_Game_Project.Quiz
                 Console.WriteLine();
                 if (hint == true)
                 {
-                    Console.WriteLine($"힌트F : {questionArr[0]}");
-                    Console.WriteLine($"힌트L : {questionArr[3]}");
+                    Quicksort(hintArr, 0, hintArr.Length-1);
+                    for (int i = 0; i < hintArr.Length; i++)
+                    {
+                        Console.Write($"{hintArr[i]} ");
+                    }
                 }
                 cnt++;
 
@@ -142,6 +145,44 @@ namespace Console_Game_Project.Quiz
             }
         }
 
+        public void Quicksort(int[] arr, int start, int end)
+        {
+            int pivot = start;
+            int left = start + 1;
+            int right = end;
+
+            while (left < right)
+            {
+                while (arr[left] <= arr[pivot] && left < right)
+                {
+                    left++;
+                }
+                while (arr[right] > arr[pivot] && left <= right)
+                {
+                    right--;
+                }
+
+                if (left < right)
+                {
+                    Swap(arr, left, right);
+                }
+                else
+                {
+                    Swap(arr, right, pivot);
+                }
+
+                Quicksort(arr, 0, right - 1);
+                Quicksort(arr, right + 1, end);
+            }
+        }
+
+        public void Swap(int[] arr, int left, int right)
+        {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+        }
+
         public override void Update()
         {
             
@@ -152,7 +193,8 @@ namespace Console_Game_Project.Quiz
         public override void Exit()
         {
             isGoal = true;
-            hint = false; 
+            hint = false;
+            Game.Player.GetMoney(50);
             Game.MainQuiz.Finish();
         }
     }

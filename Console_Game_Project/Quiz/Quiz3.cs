@@ -98,6 +98,7 @@ namespace Console_Game_Project.Quiz
         {
             isGoal = true;
             hint = false;
+            Game.Player.GetMoney(20);
             Game.MainQuiz.Finish();
         }
     }

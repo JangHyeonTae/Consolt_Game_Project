@@ -74,6 +74,7 @@ namespace Console_Game_Project.Quiz
         {
             isGoal = true;
             hint = false;
+            Game.Player.GetMoney(30);
             Game.MainQuiz.Finish();
         }
     }

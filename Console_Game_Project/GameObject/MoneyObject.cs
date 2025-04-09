@@ -21,7 +21,7 @@ namespace Console_Game_Project.GameObject
             {
                 Game.MainQuiz.Catch();
             }
-            Game.Player.GetMoney(5);
+            Game.Player.GetMoney(20);
         }
     }
 }
