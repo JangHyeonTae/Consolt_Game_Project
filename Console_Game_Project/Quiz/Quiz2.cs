@@ -18,11 +18,13 @@ namespace Console_Game_Project.Quiz
             Console.WriteLine("******** 숫자야구 ************************");
             Console.WriteLine("*****************************************");
             Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("규칙1 : 자리와 숫자가 맞으면 Strike!");
             Console.WriteLine("규칙2 : 자리는 다르지만 숫자만 맞으면 ball");
             Console.WriteLine("규칙3 : 다 틀릴경우 OUT!");
             Console.WriteLine("규칙4 : 4가지 숫자를 넣어 1~9까지 자리중 맞춰보세요!");
             Console.WriteLine("틀릴때마다 -10의 체력을 잃습니다!");
+            Console.WriteLine("**Item을 입력하시면 인벤토리창에 들어갑니다**");
             Console.WriteLine();
             Console.WriteLine();
 
@@ -68,11 +70,17 @@ namespace Console_Game_Project.Quiz
                 Console.WriteLine("========={0} 번째 기회 ============", cnt);
                 Console.Write("숫자를 입력하세요 : ");
 
-                string a= Console.ReadLine();                    
-                int answer;                                                 
-                bool isTrue = int.TryParse(a, out answer);     
-
+                string a= Console.ReadLine();
                 
+                int answer;                                                 
+                bool isTrue = int.TryParse(a, out answer);
+                string answerStr = answer.ToString();
+                
+                if (a == "Item")
+                {
+                    Game.Player.InventoryOpen();
+                    break;
+                }
 
                 if (isTrue)                                                    
                 {

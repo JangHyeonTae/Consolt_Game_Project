@@ -89,7 +89,7 @@ namespace Console_Game_Project.GameObject
             }
             else if (input == ConsoleKey.U)
             {
-                //selectItem.Use();
+                selectItem.Use();
                 Util.PressAnyKey($"{selectItem.name}을 사용했습니다.");
                 Remove(selectItem);
                 stack.Pop();

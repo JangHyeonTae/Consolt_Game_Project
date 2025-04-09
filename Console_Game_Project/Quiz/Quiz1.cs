@@ -18,7 +18,7 @@ namespace Console_Game_Project.Quiz
             Console.WriteLine("잡혔네요! 퀴즈를 풀어야 놔줄겁니다!");
             Console.WriteLine("규칙은 당신의 체력이 끝나기전에 문제를 맞춰야합니다");
             Console.WriteLine("단, 답은 숫자로 입력해야 합니다");
-            Console.WriteLine();
+            Console.WriteLine("**Item을 입력하시면 인벤토리창에 들어갑니다**");
             Console.WriteLine();
             Console.WriteLine("문제!!");
             Console.WriteLine("세상에서 가장 쉬운 숫자는?");
@@ -37,8 +37,13 @@ namespace Console_Game_Project.Quiz
             Render();
             while (answer != question)
             {
+                Game.PrintPlayerHP();
                 Input();
-                if (answer != question)
+                if (answer == "Item")
+                {
+                    Game.Player.Inventory.Open();
+                }
+                if (answer != question && answer != "Item")
                 {
                     Game.Player.TakeDamage(10);
                 }

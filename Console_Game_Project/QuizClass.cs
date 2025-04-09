@@ -13,10 +13,14 @@ namespace Console_Game_Project
         public QuizClass(string _name)
         {
             name = _name;
+
         }
         public abstract void Render();
 
-        public virtual void Input() { }
+        public virtual void Input()
+        {
+            
+        }
         public abstract void Update();
         
         public abstract void Exit();

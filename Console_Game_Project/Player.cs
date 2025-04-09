@@ -16,6 +16,8 @@ namespace Console_Game_Project
         private Inventory inventory;
         public Inventory Inventory { get { return inventory; } }
 
+
+        private int maxHP = 100;
         private int curHP = 100;
         public int CurHP { get { return curHP; } set { curHP = value; } }
 
@@ -50,13 +52,17 @@ namespace Console_Game_Project
                     pos.x++;
                     break;
                 case ConsoleKey.I:
-                    inventory.Open();
+                    InventoryOpen();
                     break;
             }
             if (map[pos.y, pos.x] == true)
             {
                 position = pos;
             }
+        }
+        public void InventoryOpen()
+        {
+            inventory.Open();
         }
 
         public void TakeDamage(int damage)
@@ -65,6 +71,15 @@ namespace Console_Game_Project
             if (curHP <= 0)
             {
                 Game.GameOver("사망...역시 조사병단은 쉽지가 않죠!");
+            }
+        }
+
+        public void Heal(int amount)
+        {
+            curHP += amount;
+            if (curHP >= maxHP)
+            {
+                curHP = maxHP;
             }
         }
     }

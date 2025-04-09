@@ -17,7 +17,7 @@ namespace Console_Game_Project.Items
         
         public override void Use()
         {
-            throw new NotImplementedException();
+            Game.Player.Heal(30);
         }
     }
 }

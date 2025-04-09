@@ -105,7 +105,7 @@ namespace Console_Game_Project
         public static void PrintPlayerHP()
         {
             Console.WriteLine("\t\t\t\t\t\t****************************");
-            Console.WriteLine($"\t\t\t\t\t\t* 체력:  {player.CurHP}     *");
+            Console.WriteLine($"\t\t\t\t\t\t*       체력:  {player.CurHP}         *");
             Console.WriteLine("\t\t\t\t\t\t****************************");
         }
     }

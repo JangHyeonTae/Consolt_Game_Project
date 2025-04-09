@@ -64,8 +64,7 @@ namespace Console_Game_Project
             {
                 case ConsoleKey.Y:
                     Game.list[selectIndex].Update();
-                    Game.stack.Pop();
-                    Game.stack.Pop();
+                    
                     break;
                 case ConsoleKey.N:
                     Game.stack.Pop();
@@ -93,6 +92,8 @@ namespace Console_Game_Project
             {
                 return;
             }
+            Game.stack.Pop();
+            Game.stack.Pop();
             Game.list.Remove(Game.list[selectIndex]);
         }
     }
