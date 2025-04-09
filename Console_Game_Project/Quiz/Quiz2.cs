@@ -8,7 +8,7 @@ namespace Console_Game_Project.Quiz
 {
     internal class Quiz2 : QuizClass
     {
-        public Quiz2() : base("문제2",false,false)
+        public Quiz2() : base("내가 운동 좀 치거든",false,false)
         {
             
         }
@@ -17,7 +17,7 @@ namespace Console_Game_Project.Quiz
 
 
             Console.WriteLine("*****************************************");
-            Console.WriteLine("******** 숫자야구 ************************");
+            Console.WriteLine("********        숫자야구         *********");
             Console.WriteLine("*****************************************");
             Console.WriteLine();
             Console.WriteLine();
@@ -70,10 +70,8 @@ namespace Console_Game_Project.Quiz
                 Console.WriteLine();
                 if (hint == true)
                 {
-                    for (int i = 0; i < questionArr.Count() - 2; i++)
-                    {
-                        Console.WriteLine($"힌트{i + 1} : {questionArr[i]}");
-                    }
+                    Console.WriteLine($"힌트F : {questionArr[0]}");
+                    Console.WriteLine($"힌트L : {questionArr[3]}");
                 }
                 cnt++;
 

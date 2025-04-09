@@ -11,12 +11,14 @@ namespace Console_Game_Project.Quiz
         private string answer;
         private string question = "190000";
 
-        public Quiz1() : base("문제1",false,false)
+        public Quiz1() : base("난 센스 지려",false,false)
         {
         }
         public override void Render()
         {
-            Console.WriteLine("잡혔네요! 퀴즈를 풀어야 놔줄겁니다!");
+            Console.WriteLine("*****************************************");
+            Console.WriteLine("********         넌센스          *********");
+            Console.WriteLine("*****************************************");
             Console.WriteLine("규칙은 당신의 체력이 끝나기전에 문제를 맞춰야합니다");
             Console.WriteLine("단, 답은 숫자로 입력해야 합니다");
             Console.WriteLine("**Item을 입력하시면 인벤토리창에 들어갑니다**");
@@ -46,6 +48,7 @@ namespace Console_Game_Project.Quiz
                 {
                     Console.WriteLine("힌트 : 십구십구십구십구십죠?");
                 }
+
                 Input();
                 if (answer == "Item")
                 {
