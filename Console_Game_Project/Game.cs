@@ -83,6 +83,7 @@ namespace Console_Game_Project
 
             list.Add(new Quiz1());
             list.Add(new Quiz2());
+            
         }
 
         public static void GameOver(string reason)
