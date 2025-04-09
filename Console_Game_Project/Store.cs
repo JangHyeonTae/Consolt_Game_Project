@@ -25,43 +25,42 @@ namespace Console_Game_Project
 
         public void OpenStore()
         {
-            Game.stackStore.Push("StoreBuy");
+            Game.stackStore.Push("StoreOpen");
             while (Game.stackStore.Count > 0)
             {
                 Console.Clear();
                 switch (Game.stackStore.Peek())
                 {
-                    //case "StoreOpen": StoreOpen(); break;
+                    case "StoreOpen": StoreOpen(); break;
                     case "StoreBuy": StoreBuy(); break;
                     case "ConfirmStore": ConfirmStore(); break;
                 }
             }
         }
 
-        //public void StoreOpen()
-        //{
-        //    Console.Clear();
-        //    Console.WriteLine("상점을 이용 하시겠습니까?");
-        //    Console.WriteLine("취소는 : N");
-        //    Console.WriteLine("이용은 : Y");
-        //
-        //    ConsoleKey input = Console.ReadKey(true).Key;
-        //    if (input == ConsoleKey.N)
-        //    {
-        //        Game.stackStore.Pop();
-        //    }
-        //    else if(input == ConsoleKey.Y) 
-        //    {
-        //        Game.stackStore.Push("StoreBuy");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("다시 입력해주세요");
-        //    }
-        //}
-        public void StoreBuy()
+        public void StoreOpen()
         {
             Console.Clear();
+            Console.WriteLine("상점을 이용 하시겠습니까?");
+            Console.WriteLine("취소는 : N");
+            Console.WriteLine("이용은 : Y");
+
+            ConsoleKey input = Console.ReadKey(true).Key;
+            if (input == ConsoleKey.N)
+            {
+                Game.stackStore.Pop();
+            }
+            else if(input == ConsoleKey.Y) 
+            {
+                Game.stackStore.Push("StoreBuy");
+            }
+            else
+            {
+                Console.WriteLine("다시 입력해주세요");
+            }
+        }
+        public void StoreBuy()
+        {
             PrintStore();
             Console.WriteLine("구매하실 아이템 번호를 눌러주세요");
             Console.WriteLine("뒤로가기는 : N");
@@ -89,8 +88,10 @@ namespace Console_Game_Project
         public void ConfirmStore()
         {
             Item selectItem = Game.items[selectIndex];
-            Console.WriteLine("{0} 을 구매 하시겠습니까?", selectItem.name);
-
+            Console.WriteLine();
+            Console.WriteLine($"정말 {Game.items[selectIndex].name} 을 구매 하시겠습니까?");
+            Console.WriteLine($"비용은 {Game.items[selectIndex].cost} 입니다");
+            Console.WriteLine("예 : Y       아니오 : N");
             ConsoleKey input = Console.ReadKey(true).Key;
             switch (input)
             {

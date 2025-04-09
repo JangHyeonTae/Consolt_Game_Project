@@ -17,7 +17,7 @@ namespace Console_Game_Project.GameObject
 
         public override void Interact(Player player)
         {
-            Game.Store.StoreBuy();
+            Game.Store.OpenStore();
         }
     }
 }

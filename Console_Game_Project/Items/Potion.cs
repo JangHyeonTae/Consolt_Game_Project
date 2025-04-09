@@ -16,6 +16,7 @@ namespace Console_Game_Project.Items
         }
         public Potion() : base('P', new Vector2(0,0), 10)
         {
+            name = "포션";
         }
 
         public override void Use()

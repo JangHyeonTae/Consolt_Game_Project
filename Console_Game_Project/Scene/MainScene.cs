@@ -16,7 +16,10 @@ namespace Console_Game_Project.Scene
         protected List<GameManager> gameObjects;
         public override void Render()
         {
-            Console.WriteLine($"\t\t\t\t\t지금 위치는 : {name}");
+            Console.WriteLine();
+            Console.WriteLine($"\t\t\t\t\t\t지금 위치는 : {name}");
+            Console.WriteLine();
+            Game.PrintPlayerHP();
             PrintMap();
             foreach (GameManager a in gameObjects)
             {

@@ -134,6 +134,7 @@ namespace Console_Game_Project
         {
             Console.WriteLine("\t\t\t\t\t\t****************************");
             Console.WriteLine($"\t\t\t\t\t\t*       체력:  {player.CurHP}         *");
+            Console.WriteLine($"\t\t\t\t\t\t*      포인트:  {player.Money}         *");
             Console.WriteLine("\t\t\t\t\t\t****************************");
         }
     }

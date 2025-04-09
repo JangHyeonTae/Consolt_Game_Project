@@ -17,7 +17,7 @@ namespace Console_Game_Project.Items
         }
         public Pass() : base('S',new Vector2(0, 0), 150)
         {
-
+            name = "패스권";
         }
 
         public override void Use()

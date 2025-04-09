@@ -16,7 +16,7 @@ namespace Console_Game_Project.Items
         }
         public Hint() : base('H', new Vector2(0,0), 50)
         {
-
+            name = "힌트권";
         }
 
         public override void Use()

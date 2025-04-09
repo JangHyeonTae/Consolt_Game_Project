@@ -21,7 +21,7 @@ namespace Console_Game_Project
         private int curHP = 100;
         public int CurHP { get { return curHP; } set { curHP = value; } }
 
-        private int money;
+        private int money = 100;
         public int Money { get { return money; } set {  money = value; } }  
 
         public Player()
@@ -32,8 +32,8 @@ namespace Console_Game_Project
         public void PrintPlayer()
         {
             Console.SetCursorPosition(position.x, position.y);
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write('M');
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write('P');
             Console.ResetColor();
         }
         public void Move(ConsoleKey input)
@@ -88,6 +88,11 @@ namespace Console_Game_Project
             {
                 Game.GameOver("사망...역시 조사병단은 쉽지가 않죠!");
             }
+        }
+
+        public void GetMoney(int amount)
+        {
+            money += amount;
         }
 
         public void Heal(int amount)
