@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Console_Game_Project.Quiz;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,15 +10,14 @@ namespace Console_Game_Project.Enemy
 {
     public class Level1Enemy : EnemyClass
     {
-        private MainQuiz mainQuiz;
+        
         public Level1Enemy(char express, Vector2 position) : 
             base(express,position)
         {
-            mainQuiz = new MainQuiz();
         }
         public override void Interact(Player player)
         {
-            mainQuiz.Catch();
+            Game.MainQuiz.Catch();
         }
 
     }

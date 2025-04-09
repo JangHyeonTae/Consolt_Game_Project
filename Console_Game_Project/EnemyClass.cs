@@ -9,7 +9,6 @@ namespace Console_Game_Project
     public abstract class EnemyClass : GameManager
     {
         
-
         protected EnemyClass(char express, Vector2 position) :
             base(ConsoleColor.Red, express, position, true)
         {

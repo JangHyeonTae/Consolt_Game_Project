@@ -16,7 +16,7 @@ namespace Console_Game_Project
         }
         public abstract void Render();
 
-        public abstract void Input();
+        public virtual void Input() { }
         public abstract void Update();
         
         public abstract void Exit();

@@ -8,8 +8,6 @@ namespace Console_Game_Project.Quiz
 {
     internal class Quiz2 : QuizClass
     {
-        private int answer;
-        private int question;
         public Quiz2() : base("문제2")
         {
             
@@ -131,11 +129,6 @@ namespace Console_Game_Project.Quiz
             }
         }
 
-        public override void Input()
-        {
-            
-            
-        }
         public override void Update()
         {
             Console.Clear();
@@ -145,9 +138,7 @@ namespace Console_Game_Project.Quiz
 
         public override void Exit()
         {
-            
             Game.MainQuiz.Finish();
-            
         }
     }
 }

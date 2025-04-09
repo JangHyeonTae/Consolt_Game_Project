@@ -12,26 +12,15 @@ namespace Console_Game_Project
     public class MainQuiz
     {
         private int selectIndex;
-        public List<QuizClass> list;
-        public Stack<string> stack;
-
-        public MainQuiz()
-        {
-            list = new List<QuizClass>();
-            stack = new Stack<string>();
-
-            list.Add(new Quiz1());
-            list.Add(new Quiz2());
-        }
 
         public void Catch()
         {
-            stack.Push("QuizList");
+            Game.stack.Push("QuizList");
 
-            while (stack.Count > 0)
+            while (Game.stack.Count > 0)
             {
                 Console.Clear();
-                switch (stack.Peek())
+                switch (Game.stack.Peek())
                 {
                     case "QuizList": QuizList();
                         break;
@@ -52,7 +41,7 @@ namespace Console_Game_Project
             
             int select = (int)input - (int)ConsoleKey.D1;
             
-            if (select < 0 || list.Count <= select)
+            if (select < 0 || Game.list.Count <= select)
             {
                 Util.PressAnyKey("범위 내의 퀴즈를 선택하세요.");
             }
@@ -60,7 +49,7 @@ namespace Console_Game_Project
             else
             {
                 selectIndex = select;
-                stack.Push("Confirm");
+                Game.stack.Push("Confirm");
             }
             
         }
@@ -74,12 +63,12 @@ namespace Console_Game_Project
             switch (input)
             {
                 case ConsoleKey.Y:
-                    list[selectIndex].Update();
-                    stack.Pop();
-                    stack.Pop();
+                    Game.list[selectIndex].Update();
+                    Game.stack.Pop();
+                    Game.stack.Pop();
                     break;
                 case ConsoleKey.N:
-                    stack.Pop();
+                    Game.stack.Pop();
                     break;
 
             }
@@ -88,19 +77,23 @@ namespace Console_Game_Project
         public void PrintQuizList()
         {
             Console.WriteLine("퀴즈 수");
-            if (list.Count == 0)
+            if (Game.list.Count == 0)
             {
-                Game.ChangeScene("Home");
+                Game.stack.Pop();
             }
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < Game.list.Count; i++)
             {
-                Console.WriteLine("{0}. {1}", i + 1, list[i].name);
+                Console.WriteLine("{0}. {1}", i + 1, Game.list[i].name);
             }
         }
 
         public void Finish()
         {
-            list.Remove(list[selectIndex]);
+            if(Game.list.Count <= 0)
+            {
+                return;
+            }
+            Game.list.Remove(Game.list[selectIndex]);
         }
     }
 }

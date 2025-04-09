@@ -51,6 +51,10 @@ namespace Console_Game_Project.Scene
             {
                 Game.Player.position = new Vector2(16, 2);
             }
+            else if (Game.prevSceneName == "Quiz1")
+            {
+                Game.Player.position = new Vector2(1,2);
+            }
             Game.Player.map = map;
         }
 

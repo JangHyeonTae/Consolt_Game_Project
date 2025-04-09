@@ -1,6 +1,7 @@
 ﻿using Console_Game_Project.Quiz;
 using Console_Game_Project.Scene;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,10 @@ namespace Console_Game_Project
         private static Dictionary<string,SceneManager> sceneDic;
         private static SceneManager curScene;
         public static string prevSceneName;
+
+        public static List<QuizClass> list;
+        public static Stack<string> stack;
+
 
         private static MainQuiz mainQuiz;
         public static MainQuiz MainQuiz {  get { return mainQuiz; } }
@@ -66,9 +71,20 @@ namespace Console_Game_Project
             sceneDic.Add("Level2", new Level2Scene());
             sceneDic.Add("Level3", new Level3Scene());
 
-
             curScene = sceneDic["Title"];
+
+            Quiz();
         }
+
+        public static void Quiz()
+        {
+            list = new List<QuizClass>();
+            stack = new Stack<string>();
+
+            list.Add(new Quiz1());
+            list.Add(new Quiz2());
+        }
+
         public static void GameOver(string reason)
         {
             Console.Clear();
@@ -88,7 +104,7 @@ namespace Console_Game_Project
         public static void PrintPlayerHP()
         {
             Console.WriteLine("\t\t\t\t\t\t****************************");
-            Console.WriteLine($"\t\t\t\t\t\t* 체력:  {player.CurHP}   *");
+            Console.WriteLine($"\t\t\t\t\t\t* 체력:  {player.CurHP}     *");
             Console.WriteLine("\t\t\t\t\t\t****************************");
         }
     }

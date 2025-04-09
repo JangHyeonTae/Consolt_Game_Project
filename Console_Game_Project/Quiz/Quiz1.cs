@@ -10,15 +10,12 @@ namespace Console_Game_Project.Quiz
     {
         private string answer;
         private string question = "오페라하우스";
-
         public Quiz1() : base("문제1")
         {
-            
         }
         public override void Render()
         {
-            
-            Console.WriteLine("잡혔네요!ㅎㅎ 퀴즈를 풀어야 놔줄겁니다!");
+            Console.WriteLine("잡혔네요! 퀴즈를 풀어야 놔줄겁니다!");
             Console.WriteLine("규칙은 당신의 체력이 끝나기전에 문제를 맞춰야합니다");
             Console.WriteLine("단, 띄어쓰기는 하지마세요!");
             Console.WriteLine();
@@ -26,7 +23,6 @@ namespace Console_Game_Project.Quiz
             Console.WriteLine("문제!!");
             Console.WriteLine("숫자 5가 제일 싫어하는 집은?");
             Console.WriteLine();
-            
         }
 
         public override void Input()
@@ -41,7 +37,6 @@ namespace Console_Game_Project.Quiz
             Render();
             while (answer != question)
             {
-                Game.PrintPlayerHP();
                 Input();
                 if (answer != question)
                 {
@@ -50,11 +45,8 @@ namespace Console_Game_Project.Quiz
                 else
                 {
                     Exit();
-                    break;
                 }
             }
-            
-            
         }
         public override void Exit()
         {
