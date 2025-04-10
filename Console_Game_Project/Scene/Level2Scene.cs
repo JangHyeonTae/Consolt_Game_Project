@@ -35,8 +35,8 @@ namespace Console_Game_Project.Scene
             Game.Player.map = map;
 
             gameObjects = new List<GameManager>();
-            gameObjects.Add(new Potal("Level1", '1', new Vector2(1,1)));
-            gameObjects.Add(new Potal("Level3", '3', new Vector2(10,2)));
+            gameObjects.Add(new Potal("Level1", '1', new Vector2(1,1), false));
+            gameObjects.Add(new Potal("Level3", '3', new Vector2(10,2), false));
 
             for (int i = 1; i < map.GetLength(0) - 1; i++)
             {
@@ -62,11 +62,11 @@ namespace Console_Game_Project.Scene
         {
             if (Game.prevSceneName == "Level1")
             {
-                Game.Player.position = new Vector2(2, 1);
+                Game.Player.position = new Vector2(1, 1);
             }
             else if(Game.prevSceneName == "Level3")
             {
-                Game.Player.position = new Vector2(16, 2);
+                Game.Player.position = new Vector2(10, 2);
             }
             Game.Player.map = map;
         }

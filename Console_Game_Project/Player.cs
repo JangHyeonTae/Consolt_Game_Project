@@ -13,9 +13,13 @@ namespace Console_Game_Project
         public Vector2 position;
         public bool[,] map;
 
+        Potal potal;
+
         private Inventory inventory;
         public Inventory Inventory { get { return inventory; } }
 
+        private int count = 0;
+        public int Count { get { return count; } set { count = value; } }
 
         private int maxHP = 100;
         private int curHP = 100;
@@ -27,6 +31,7 @@ namespace Console_Game_Project
         public Player()
         {
             inventory = new Inventory();
+            potal = new Potal();
         }
 
         public void PrintPlayer()
@@ -101,6 +106,15 @@ namespace Console_Game_Project
             if (curHP >= maxHP)
             {
                 curHP = maxHP;
+            }
+        }
+
+        public void KeyTrue(int plus)
+        {
+            count += plus;
+            if (this.count >= 3)
+            {
+                potal.KeyTrue();
             }
         }
     }

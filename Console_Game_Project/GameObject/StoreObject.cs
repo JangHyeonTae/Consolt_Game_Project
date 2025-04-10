@@ -10,7 +10,7 @@ namespace Console_Game_Project.GameObject
     {
         
 
-        public StoreObject(char express, Vector2 position) : base(ConsoleColor.White, express, position, false)
+        public StoreObject(char express, Vector2 position) : base(ConsoleColor.White, express, position, false, false)
         {
            
         }

@@ -10,7 +10,7 @@ namespace Console_Game_Project
     {
         
         protected EnemyClass(char express, Vector2 position) :
-            base(ConsoleColor.Red, express, position, true)
+            base(ConsoleColor.Red, express, position, true,false)
         {
             
         }

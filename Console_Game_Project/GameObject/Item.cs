@@ -12,7 +12,7 @@ namespace Console_Game_Project.GameObject
         public string description;
         public int cost;
 
-        public Item(char express, Vector2 position, int _cost) : base(ConsoleColor.Green, express, position, true)
+        public Item(char express, Vector2 position, int _cost) : base(ConsoleColor.Green, express, position, true,false)
         {
             cost = _cost;
         }

@@ -61,15 +61,22 @@ namespace Console_Game_Project.GameObject
             Console.WriteLine("사용할 아이템을 선택하세요");
             Console.WriteLine("N : 뒤로가기");
             ConsoleKey input = Console.ReadKey(true).Key;
-            int select = (int)input - (int)ConsoleKey.D1;
             if (input == ConsoleKey.N)
             {
                 stack.Pop();
             }
             else
             {
-                selectIndex = select;
-                stack.Push("Confirm");
+                int select = (int)input - (int)ConsoleKey.D1;
+                if (select < 0 || items.Count <= select)
+                {
+                    Util.PressAnyKey("범위 내의 아이템을 선택하세요.");
+                }
+                else
+                {
+                    selectIndex = select;
+                    stack.Push("Confirm");
+                }
             }
         }
 
@@ -78,10 +85,6 @@ namespace Console_Game_Project.GameObject
         {
             PrintMenu();
 
-            if (items.Count <= 0)
-            {
-                return;
-            }
             Item selectItem = items[selectIndex];
             
             Console.WriteLine($"진짜 {selectItem.name}을 사용 하시겠습니까?");
@@ -89,6 +92,7 @@ namespace Console_Game_Project.GameObject
             Console.WriteLine("N : 뒤로가기");
 
             ConsoleKey input = Console.ReadKey(true).Key;
+
 
             if (input == ConsoleKey.N)
             {

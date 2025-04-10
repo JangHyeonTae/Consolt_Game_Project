@@ -19,21 +19,15 @@ namespace Console_Game_Project.Scene
             name = "Level1";
             drawMap = new string[]
             {
-                "####################################",
-                "#                                  #",
-                "#                                  #",
-                "#                                  #",
-                "#                                  #",
-                "#                                  #",
-                "#                                  #",
-                "#                                  #",
-                "#                                  #",
-                "#                                  #",
-                "#                                  #",
-                "####################################"
+                "###################",
+                "#                 #",
+                "#                 #",
+                "#                 #",
+                "#                 #",
+                "###################"
             };
 
-            map = new bool[12, 36];
+            map = new bool[6, 19];
             for (int y = 0; y < map.GetLength(0); y++)
             {
                 for (int x = 0; x < map.GetLength(1); x++)
@@ -46,8 +40,9 @@ namespace Console_Game_Project.Scene
             Game.Player.map = map;
 
             gameObjects = new List<GameManager>();
-            gameObjects.Add(new Potal("Level2", '2', new Vector2(17, 4)));
-            gameObjects.Add(new Potal("Home", 'H', new Vector2(1,1)));
+            gameObjects.Add(new Potal("Level2", '2', new Vector2(1, 1), false));
+            
+            gameObjects.Add(new Potal("Home", 'H', new Vector2(1,1), false));
             //gameObjects.Add(new RandomEnemy('E',new Vector2(rand.Next(1, Game.Player.map.GetLength(0)),0)));
         }
         

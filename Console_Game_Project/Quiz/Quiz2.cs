@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Console_Game_Project.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -195,6 +196,7 @@ namespace Console_Game_Project.Quiz
 
         public override void Exit()
         {
+            Game.Player.Inventory.Add(new Key());
             isGoal = true;
             hint = false;
             Game.Player.GetMoney(50);

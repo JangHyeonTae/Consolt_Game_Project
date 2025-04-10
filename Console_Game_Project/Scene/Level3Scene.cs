@@ -15,15 +15,22 @@ namespace Console_Game_Project.Scene
             name = "Level3";
             drawMap = new string[]
             {
-                "###################",
-                "#                 #",
-                "#                 #",
-                "#                 #",
-                "#                 #",
-                "###################"
+                "#####################################",
+                "#   #   #                           #",
+                "#   #   #  #####  ###  #########    #",
+                "#   #####  ##  #  ###  ##      #    #",
+                "#              #  ###  ##      #    #",
+                "############   #  #    ##############",
+                "############   #  #    ########     #",
+                "#              #  ##  ###           #",
+                "################  #######           #",
+                "#                 #                 #",
+                "#  ################    ##           #",
+                "#                      ##           #",
+                "#####################################"
             };
 
-            map = new bool[6, 19];
+            map = new bool[13, 37];
             for (int y = 0; y < map.GetLength(0); y++)
             {
                 for (int x = 0; x < map.GetLength(1); x++)
@@ -36,8 +43,8 @@ namespace Console_Game_Project.Scene
             Game.Player.map = map;
 
             gameObjects = new List<GameManager>();
-            gameObjects.Add(new Potal("Level2", '2', new Vector2(1, 1)));
-            gameObjects.Add(new Potal("LastScene", 'L', new Vector2(17, 4)));
+            gameObjects.Add(new Potal("Level2", '2', new Vector2(1,1), false));
+            gameObjects.Add(new Potal("LastScene", 'L', new Vector2(9, 24), true));
         }
 
 
@@ -45,15 +52,7 @@ namespace Console_Game_Project.Scene
         {
             if (Game.prevSceneName == "Level2")
             {
-                Game.Player.position = new Vector2(2, 1);
-            }
-            else if (Game.prevSceneName == "Level4")
-            {
-                Game.Player.position = new Vector2(16, 2);
-            }
-            else if (Game.prevSceneName == "Quiz1")
-            {
-                Game.Player.position = new Vector2(1,2);
+                Game.Player.position = new Vector2(1, 1);
             }
             Game.Player.map = map;
         }

@@ -45,11 +45,14 @@ namespace Console_Game_Project.Scene
             {
                 if (Game.Player.position == a.position)
                 {
+                    
                     a.Interact(Game.Player);
+                    
                     if (a.isOnce == true)
                     {
                         gameObjects.Remove(a);
                     }
+                    
                     break;
                 }
             }

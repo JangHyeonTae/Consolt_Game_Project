@@ -12,13 +12,15 @@ namespace Console_Game_Project
         public char express;
         public Vector2 position;
         public bool isOnce;
+        public bool isKey;
 
-        public GameManager(ConsoleColor color, char express, Vector2 position, bool isOnce)
+        public GameManager(ConsoleColor color, char express, Vector2 position, bool isOnce, bool isKey)
         {
             this.color = color;
             this.express = express;
             this.position = position;
             this.isOnce = isOnce;
+            this.isKey = isKey;
         }
 
         public void PrintGameObject()
