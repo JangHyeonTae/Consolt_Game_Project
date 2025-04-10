@@ -14,13 +14,9 @@ namespace Console_Game_Project.Quiz
         }
         public override void Render()
         {
-            
-            
-
-
             int[] questionArr = new int[4];                           
             int[] answerArr = new int[4];
-            int[] hintArr = questionArr;
+            int[] hintArr = new int[4];
             Random rand = new Random();
 
             int cnt = 0;                                       
@@ -44,7 +40,10 @@ namespace Console_Game_Project.Quiz
                     }
                 }
             }
-            
+
+            //주의할점 : reference value
+            //hintArr = question -> refenence전달
+             Array.Copy(questionArr,hintArr, questionArr.Length);
             while (Game.Player.CurHP > 0 && isGoal == false)                                          
             {
                 Console.Clear();
@@ -63,18 +62,21 @@ namespace Console_Game_Project.Quiz
                 Console.WriteLine();
                 Console.WriteLine();
                 Game.PrintPlayerHP();
+
                 foreach (int num in questionArr)
                 {
-                    Console.Write(num + " ");
+                    Console.Write($"{num} ");
                 }
                 Console.WriteLine();
                 if (hint == true)
                 {
                     Quicksort(hintArr, 0, hintArr.Length-1);
+                    Console.Write("힌트 : ");
                     for (int i = 0; i < hintArr.Length; i++)
                     {
                         Console.Write($"{hintArr[i]} ");
                     }
+                    Console.WriteLine();
                 }
                 cnt++;
 
@@ -133,6 +135,7 @@ namespace Console_Game_Project.Quiz
                 if (strike == 4 || isGoal == true)
                 {
                     Util.PressAnyKey("홈럽~~~~");
+                    Exit();
                     break;
                 }
                 
@@ -151,13 +154,13 @@ namespace Console_Game_Project.Quiz
             int left = start + 1;
             int right = end;
 
-            while (left < right)
+            while (left <= right)
             {
                 while (arr[left] <= arr[pivot] && left < right)
                 {
                     left++;
                 }
-                while (arr[right] > arr[pivot] && left <= right)
+                while (arr[right] >  arr[pivot] && left <= right)
                 {
                     right--;
                 }
@@ -171,7 +174,7 @@ namespace Console_Game_Project.Quiz
                     Swap(arr, right, pivot);
                 }
 
-                Quicksort(arr, 0, right - 1);
+                Quicksort(arr, start, right - 1);
                 Quicksort(arr, right + 1, end);
             }
         }

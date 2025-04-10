@@ -11,17 +11,8 @@ namespace Console_Game_Project
 {
     public class Store
     {
-        //public List<Item> items;
-        //private Stack<string> stack;
         private int selectIndex;
         public int SelectIndex { get { return selectIndex; } }
-        public Store()
-        {
-            //items = new List<Item>();
-            //stackStore = new Stack<string>();
-
-            
-        }
 
         public void OpenStore()
         {

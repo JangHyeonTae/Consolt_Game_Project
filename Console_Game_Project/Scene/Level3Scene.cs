@@ -37,7 +37,7 @@ namespace Console_Game_Project.Scene
 
             gameObjects = new List<GameManager>();
             gameObjects.Add(new Potal("Level2", '2', new Vector2(1, 1)));
-            gameObjects.Add(new Potal("Level4", '4', new Vector2(17, 2)));
+            gameObjects.Add(new Potal("LastScene", 'L', new Vector2(17, 4)));
         }
 
 

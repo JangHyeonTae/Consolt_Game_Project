@@ -83,6 +83,7 @@ namespace Console_Game_Project
             sceneDic.Add("Level1", new Level1Scene());
             sceneDic.Add("Level2", new Level2Scene());
             sceneDic.Add("Level3", new Level3Scene());
+            sceneDic.Add("LastScene", new LastScene());
 
             curScene = sceneDic["Title"];
 
@@ -119,6 +120,18 @@ namespace Console_Game_Project
             Console.Clear();
             Console.WriteLine("********************************");
             Console.WriteLine("*         GAME OVER            *");
+            Console.WriteLine("********************************");
+            Console.WriteLine();
+            Console.WriteLine(reason);
+
+            gameOver = true;
+        }
+
+        public static void GameFinish(string reason)
+        {
+            Console.Clear();
+            Console.WriteLine("********************************");
+            Console.WriteLine("*         YOUR WIN!            *");
             Console.WriteLine("********************************");
             Console.WriteLine();
             Console.WriteLine(reason);

@@ -59,10 +59,10 @@ namespace Console_Game_Project.GameObject
         {
             PrintMenu();
             Console.WriteLine("사용할 아이템을 선택하세요");
-            Console.WriteLine("I : 뒤로가기");
+            Console.WriteLine("N : 뒤로가기");
             ConsoleKey input = Console.ReadKey(true).Key;
             int select = (int)input - (int)ConsoleKey.D1;
-            if (input == ConsoleKey.I)
+            if (input == ConsoleKey.N)
             {
                 stack.Pop();
             }
@@ -86,11 +86,11 @@ namespace Console_Game_Project.GameObject
             
             Console.WriteLine($"진짜 {selectItem.name}을 사용 하시겠습니까?");
             Console.WriteLine("U : 사용하기");
-            Console.WriteLine("I : 뒤로가기");
+            Console.WriteLine("N : 뒤로가기");
 
             ConsoleKey input = Console.ReadKey(true).Key;
 
-            if (input == ConsoleKey.I)
+            if (input == ConsoleKey.N)
             {
                 stack.Pop();
                 Console.Clear();

@@ -38,8 +38,7 @@ namespace Console_Game_Project.Scene
 
             gameObjects = new List<GameManager>();
             gameObjects.Add(new Potal("Level1", '1', new Vector2(9,5)));
-            gameObjects.Add(new Potion(new Vector2(10, 3)));
-            gameObjects.Add(new Pass(new Vector2(10, 4)));
+            gameObjects.Add(new Potion(new Vector2(15, 3)));
             gameObjects.Add(new Level1Enemy( 'E', new Vector2(9, 2)));
             gameObjects.Add(new Level2Enemy('E', new Vector2(8, 4)));
             gameObjects.Add(new Hint(new Vector2(8, 2)));

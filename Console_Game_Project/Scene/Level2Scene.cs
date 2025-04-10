@@ -38,44 +38,23 @@ namespace Console_Game_Project.Scene
             gameObjects.Add(new Potal("Level1", '1', new Vector2(1,1)));
             gameObjects.Add(new Potal("Level3", '3', new Vector2(10,2)));
 
-            gameObjects.Add(new MoneyObject('M', new Vector2(8, 1)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(8, 2)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(8, 3)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(8, 4)));
+            for (int i = 1; i < map.GetLength(0) - 1; i++)
+            {
+                for (int j = 5; j < 10; j++)
+                {
+                    gameObjects.Add(new MoneyObject('M', new Vector2(j,i)));
+                }
 
-            gameObjects.Add(new MoneyObject('M', new Vector2(9, 1)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(9, 2)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(9, 3)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(9, 4)));
+                for (int j = 11; j < 16; j++)
+                {
+                    gameObjects.Add(new MoneyObject('M', new Vector2(j,i)));
+                }
+            }
 
             gameObjects.Add(new MoneyObject('M', new Vector2(10, 1)));
             gameObjects.Add(new MoneyObject('M', new Vector2(10, 3)));
             gameObjects.Add(new MoneyObject('M', new Vector2(10, 4)));
 
-            gameObjects.Add(new MoneyObject('M', new Vector2(11, 1)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(11, 2)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(11, 3)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(11, 4)));
-
-            gameObjects.Add(new MoneyObject('M', new Vector2(12, 1)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(12, 2)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(12, 3)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(12, 4)));
-
-            gameObjects.Add(new MoneyObject('M', new Vector2(13, 1)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(13, 2)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(13, 3)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(13, 4)));
-
-            gameObjects.Add(new MoneyObject('M', new Vector2(14, 1)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(14, 2)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(14, 3)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(14, 4)));
-
-            gameObjects.Add(new MoneyObject('M', new Vector2(15, 1)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(15, 2)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(15, 3)));
-            gameObjects.Add(new MoneyObject('M', new Vector2(15, 4)));
         }
 
 
