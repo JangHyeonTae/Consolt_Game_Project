@@ -10,7 +10,7 @@ namespace Console_Game_Project.GameObject
     {
         Random rand = new Random();
 
-        public MoneyObject(char express, Vector2 position) : base(ConsoleColor.Yellow,express,position,true, false)
+        public MoneyObject(char express, Vector2 position) : base(ConsoleColor.Yellow,express,position,true)
         {
             
         }

@@ -35,8 +35,8 @@ namespace Console_Game_Project.Scene
             Game.Player.map = map;
 
             gameObjects = new List<GameManager>();
-            gameObjects.Add(new Potal("Level1", '1', new Vector2(1,1), false));
-            gameObjects.Add(new Potal("Level3", '3', new Vector2(10,2), false));
+            gameObjects.Add(new Potal("Level1", '1', new Vector2(1,1)));
+            gameObjects.Add(new Potal("Level3", '3', new Vector2(10,2)));
 
             for (int i = 1; i < map.GetLength(0) - 1; i++)
             {

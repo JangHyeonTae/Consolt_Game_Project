@@ -40,12 +40,41 @@ namespace Console_Game_Project.Scene
             Game.Player.map = map;
 
             gameObjects = new List<GameManager>();
-            gameObjects.Add(new Potal("Level2", '2', new Vector2(1, 1), false));
-            
-            gameObjects.Add(new Potal("Home", 'H', new Vector2(1,1), false));
+            gameObjects.Add(new Potal("Level2", '2', new Vector2(17, 1)));
+            gameObjects.Add(new Potal("Home", 'H', new Vector2(1,1)));
+            for (int y = 1; y < map.GetLength(0)-3; y++)
+            {
+                for(int x =3; x < map.GetLength(1)-2; x++)
+                gameObjects.Add(new Level1Enemy('E', new Vector2(x,y)));
+            }
+
+            Random rand = new Random();
+
+            for (int y = 1; y < map.GetLength(0) - 3; y++)
+            {
+                for (int x = 4; x < map.GetLength(1) - 2; x++)
+                {
+                    int num1 = rand.Next(0, 3);
+                    if (num1 == 0)
+                    {
+                        gameObjects.Add(new Potion(new Vector2(x,y)));
+                    }
+                    else if(num1 == 1)
+                    {
+                        gameObjects.Add(new Pass(new Vector2(x,y)));
+                    }
+                    else
+                    {
+                        gameObjects.Add(new Hint(new Vector2(x,y)));
+                    }
+                }
+                    
+            }
+
+
             //gameObjects.Add(new RandomEnemy('E',new Vector2(rand.Next(1, Game.Player.map.GetLength(0)),0)));
         }
-        
+
 
         public override void Enter()
         {
@@ -55,7 +84,7 @@ namespace Console_Game_Project.Scene
             }
             else if(Game.prevSceneName == "Level2")
             {
-                Game.Player.position = new Vector2(17, 3);
+                Game.Player.position = new Vector2(17, 1);
             }
             Game.Player.map = map;
         }

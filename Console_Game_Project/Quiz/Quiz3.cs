@@ -74,6 +74,7 @@ namespace Console_Game_Project.Quiz
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("정답입니다.");
+                    Exit();
                     Console.ResetColor();
                     break;
                 }

@@ -100,6 +100,12 @@ namespace Console_Game_Project
             list.Add(new Quiz2());
             list.Add(new Quiz3());
             list.Add(new Quiz4());
+
+            if (list.Count <= 0)
+            {
+                stackQuiz.Pop();
+                stackQuiz.Pop();
+            }
             
         }
 

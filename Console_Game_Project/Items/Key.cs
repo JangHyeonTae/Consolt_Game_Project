@@ -22,7 +22,7 @@ namespace Console_Game_Project.Items
 
         public override void Use()
         {
-            Game.Player.KeyTrue(1);
+            Game.Player.Count++;
         }
     }
 }

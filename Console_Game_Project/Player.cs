@@ -13,7 +13,6 @@ namespace Console_Game_Project
         public Vector2 position;
         public bool[,] map;
 
-        Potal potal;
 
         private Inventory inventory;
         public Inventory Inventory { get { return inventory; } }
@@ -31,7 +30,6 @@ namespace Console_Game_Project
         public Player()
         {
             inventory = new Inventory();
-            potal = new Potal();
         }
 
         public void PrintPlayer()
@@ -109,13 +107,5 @@ namespace Console_Game_Project
             }
         }
 
-        public void KeyTrue(int plus)
-        {
-            count += plus;
-            if (this.count >= 3)
-            {
-                potal.KeyTrue();
-            }
-        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Console_Game_Project.GameObject;
+﻿using Console_Game_Project.Enemy;
+using Console_Game_Project.GameObject;
+using Console_Game_Project.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,8 +45,14 @@ namespace Console_Game_Project.Scene
             Game.Player.map = map;
 
             gameObjects = new List<GameManager>();
-            gameObjects.Add(new Potal("Level2", '2', new Vector2(1,1), false));
-            gameObjects.Add(new Potal("LastScene", 'L', new Vector2(9, 24), true));
+            gameObjects.Add(new Potal("Level2", '2', new Vector2(1,1)));
+            gameObjects.Add(new Key(new Vector2(21,7)));
+            gameObjects.Add(new Key(new Vector2(1,7)));
+            gameObjects.Add(new Level1Enemy('E', new Vector2(12,11)));
+            gameObjects.Add(new Level1Enemy('E', new Vector2(12,5)));
+            gameObjects.Add(new Level1Enemy('E', new Vector2(13,5)));
+            gameObjects.Add(new Level1Enemy('E', new Vector2(14,5)));
+            gameObjects.Add(new LastPotal("LastScene", 'L', new Vector2(24, 9)));
         }
 
 

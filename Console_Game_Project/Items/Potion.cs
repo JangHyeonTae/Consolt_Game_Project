@@ -9,7 +9,7 @@ namespace Console_Game_Project.Items
 {
     internal class Potion : Item
     {
-        public Potion(Vector2 position) : base('P',position ,10)
+        public Potion(Vector2 position) : base('O',position ,10)
         {
             name = "포션";
             description = "HP + 30";
