@@ -13,7 +13,6 @@ namespace Console_Game_Project
         public Vector2 position;
         public bool[,] map;
 
-
         private Inventory inventory;
         public Inventory Inventory { get { return inventory; } }
 
@@ -77,6 +76,11 @@ namespace Console_Game_Project
             {
                 Console.WriteLine("돈이 부족합니다");
             }
+        }
+
+        public void IsKey()
+        {
+
         }
 
         public void InventoryOpen()

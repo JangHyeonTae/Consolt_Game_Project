@@ -14,7 +14,7 @@ namespace Console_Game_Project.Items
             name = "힌트권";
             description = "힌트를 받을 수 있다";
         }
-        public Hint() : base('H', new Vector2(0,0), 50)
+        public Hint()
         {
             name = "힌트권";
         }

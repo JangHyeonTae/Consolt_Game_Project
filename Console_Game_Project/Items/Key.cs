@@ -9,12 +9,11 @@ namespace Console_Game_Project.Items
 {
     public class Key : Item
     {
-
         public Key(Vector2 position) : base('K', position, 10)
         {
             name = "열쇠";
         }
-        public Key() : base('K', new Vector2(0, 0), 10)
+        public Key()
         {
             name = "열쇠";
         }

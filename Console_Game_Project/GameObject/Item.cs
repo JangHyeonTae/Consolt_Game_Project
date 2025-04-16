@@ -17,6 +17,8 @@ namespace Console_Game_Project.GameObject
             cost = _cost;
         }
 
+        public Item() { }
+
         public override void Interact(Player player)
         {
             player.Inventory.Add(this);

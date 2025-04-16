@@ -15,7 +15,7 @@ namespace Console_Game_Project.Items
             name = "패스권";
             description = "퀴즈 하나를 통과할 수 있다";
         }
-        public Pass() : base('S',new Vector2(0, 0), 150)
+        public Pass()
         {
             name = "패스권";
         }

@@ -14,7 +14,7 @@ namespace Console_Game_Project.Items
             name = "포션";
             description = "HP + 30";
         }
-        public Potion() : base('P', new Vector2(0,0), 10)
+        public Potion()
         {
             name = "포션";
         }

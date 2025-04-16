@@ -20,6 +20,7 @@ namespace Console_Game_Project
             this.position = position;
             this.isOnce = isOnce;
         }
+        public GameManager(){}
 
         public void PrintGameObject()
         {

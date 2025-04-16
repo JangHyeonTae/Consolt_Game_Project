@@ -13,6 +13,7 @@ namespace Console_Game_Project.GameObject
         {
             this.scene = scene;
         }
+
         public override void Interact(Player player)
         {
             
